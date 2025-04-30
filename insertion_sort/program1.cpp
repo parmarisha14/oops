@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+void insertion_sort(int [],int n);
+void display(int [],int n);
+int main(){
+    int n;
+    cout<<"Enter the total elements:";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cout<<"Enter the Elements:";
+        cin>>arr[i];
+    }
+    
+    insertion_sort(arr,n);
+    display(arr,n);
+    return 0;
+}
+void insertion_sort(int arr[],int n){
+    for(int i=1;i<n;i++){
+        int key=arr[i];
+        int j=i-1;
+        while(j>=0 && arr[j]>key){
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=key;
+    }
+   
+}
+void display(int arr[],int n){
+    cout<<endl<<"Output:";
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<"  ";
+    }
+}
